@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendezvények</title>
+    <link rel="stylesheet" href="rendezveny.css">
+    <script src="rendezvenyyek.js"></script>
+    <style>
+        
+        .image-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slider-image {
+            min-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        
+        .slider-btn {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .slider-btn:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #bbb;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .dot.active {
+            background-color: #2a7b2c;
+        }
+        
+        /* A meglévő stílusokhoz igazítás */
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        
+        .dolog, .dolog2 {
+            width: 48%;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .dolog, .dolog2 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <h1>Békéscsaba</h1>
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="dropdown">
+                        <a href="index.html">A városról</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="rendezvenyek.html">Rendezvények</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="latnivalok.html">Látnivalók</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="szallas.html">Szállások</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrap">
+            <div class="dolog">
+                <h2>Munkácsy Hotel</h2>
+                <p>A négycsillagos Munkácsy Hotel Békéscsaba szívében, az ősfákkal tarkított Széchenyi liget mellett található 10 percnyi sétára a belvárostól. A szálloda 24 szobája – ebből 4 lakosztály – exkluzív enteriőrrel, személyre szabott business szolgáltatásokkal és családbarát kialakítással várja vendégeit.Az Aranyecset Étterem és Bárban hazai és nemzetközi ételek nagy választékát szolgálják fel a betérő vendégeknek.
+                    Békécsaba egyik legkifonultabb hotele.
+                </p>
+                
+                <div class="image-slider" id="templom-slider">
+                    <div class="slider-container">
+                        <img class="slider-image" src="assets/mhotel1.jpg" alt="Munkácsy Hotel" title="Munkácsy Hotel">
+                        <img class="slider-image" src="assets/mhotel2.jpg" alt="Munkácsy Hotel" title="Munkácsy Hotel">
+                        <img class="slider-image" src="assets/mhotel3.jpg" alt="Munkácsy Hotel" title="Munkácsy Hotel">
+                        
+                    </div>
+                    <div class="slider-nav">
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="dolog2">
+                <h2>Arcanum Hotel</h2>
+                <p>A 2014-ben nyílt Arcanum Hotel a rohanó világtól elzártan, három hektáros zöld park nyugalmával várja Vendégeit Békéscsaba kertvárosában.
+                A szálloda szolgáltatásait színesíti, jól felszerelt  wellness részleg, melynek köszönhetően, nem csak a lélek, de a test is regenerálódni tud. A szálloda étterme a hagyományos magyar ételek és a kedvelt alföldi specialitások mellett a modern, reformkonyha kedvelői is széles választékból csemegézhetnek.
+                </p>
+                
+                <div class="image-slider" id="furdo-slider">
+                    <div class="slider-container">
+                        <img class="slider-image" src="assets/arcanumh1.jpg" alt="Arcanum Hotel" title="Arcanum Hotel">
+                        <img class="slider-image" src="assets/arcanumh2.jpg" alt="Arcanum Hotel" title="Arcanum Hotel">
+                        <img class="slider-image" src="assets/arcanumh3.jpg" alt="Arcanum Hotel" title="Arcanum Hotel">
+                    </div>
+                    <div class="slider-nav">
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+        
+        <div class="wrap">
+            <div class="dolog">
+                <h2>Fiume Hotel</h2>
+                <p>A Hotel Fiume Békéscsaba belvárosának egyik ikonikus szállodája, amely 1904-ben épült szecessziós stílusban. A patinás épület a város egyik jelképe, amely elegáns külsővel és modern szolgáltatásokkal várja vendégeit. Kiváló elhelyezkedése miatt nemcsak szállásként, hanem kulturális  központként is fontos szerepet játszik Békéscsaba életében.</p>
+                
+                <div class="image-slider" id="varoshaza-slider">
+                    <div class="slider-container">
+                        <img class="slider-image" src="assets/fiumeh1.webp" alt="Fiume Hotel" title="Fiume Hotel">
+                        <img class="slider-image" src="assets/fiumeh2.webp" alt="Fiume Hotel" title="Fiume Hotel">
+                        <img class="slider-image" src="assets/fiumeh3.webp" alt="Fiume Hotel" title="Fiume Hotel">
+                    </div>
+                    <div class="slider-nav">
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="dolog2">
+                <h2>Brill Hotel</h2>
+                <p>A Brill Hotel Békéscsaba egy modern, családias hangulatú szálloda a város központjában. Letisztult, kényelmes szobákkal és barátságos kiszolgálással várja vendégeit, legyen szó üzleti útról vagy pihenésről. A szálloda közelsége miatt a város főbb nevezetességei és rendezvényei könnyen elérhetők innen.</p>
+                
+                <div class="image-slider" id="csabapark-slider">
+                    <div class="slider-container">
+                        <img class="slider-image" src="assets/brillh1.jpg" alt="Brill Hotel" title="Brill Hotel">
+                        <img class="slider-image" src="assets/brillh2.jpg" alt="Brill Hotel" title="Brill Hotel">
+                        <img class="slider-image" src="assets/brillh3.jpg" alt="Brill Hotel" title="Brill Hotel">
+                    </div>
+                    <div class="slider-nav">
+                        <button class="slider-btn prev-btn">&#10094;</button>
+                        <button class="slider-btn next-btn">&#10095;</button>
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Békéscsaba város.</p>
+        </div>
+    </footer>
+
+ 
+</body>
+</html>
